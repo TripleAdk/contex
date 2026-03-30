@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-quaternary: var(--bg-quaternary);
+  
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-quaternary: var(--text-quaternary);
+  
+  --color-border-primary: var(--border-primary);
+  --color-border-secondary: var(--border-secondary);
+}
+
+:root {
+  /* Dark Theme (Default) */
+  --bg-primary: #050505;
+  --bg-secondary: #0a0a0c;
+  --bg-tertiary: #121214;
+  --bg-quaternary: #1a1a1e;
+  
+  --text-primary: #e2e8f0;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  --text-quaternary: #64748b;
+  
+  --border-primary: #1e293b;
+  --border-secondary: #334155;
+}
+
+:root[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-quaternary: #e2e8f0;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
+  --text-quaternary: #64748b;
+  
+  --border-primary: #e2e8f0;
+  --border-secondary: #cbd5e1;
+}
+
+:root[data-theme="high-contrast"] {
+  --bg-primary: #000000;
+  --bg-secondary: #000000;
+  --bg-tertiary: #000000;
+  --bg-quaternary: #000000;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #ffffff;
+  --text-tertiary: #ffffff;
+  --text-quaternary: #ffffff;
+  
+  --border-primary: #ffffff;
+  --border-secondary: #ffffff;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+/* Theme Overrides for hardcoded Tailwind classes */
+.bg-\[\#050505\] { background-color: var(--bg-primary) !important; }
+.bg-\[\#0a0a0c\] { background-color: var(--bg-secondary) !important; }
+.bg-\[\#121214\] { background-color: var(--bg-tertiary) !important; }
+.bg-\[\#16161a\] { background-color: var(--bg-tertiary) !important; }
+.bg-\[\#1a1a1e\] { background-color: var(--bg-quaternary) !important; }
+.bg-\[\#1e1e24\] { background-color: var(--bg-quaternary) !important; }
+
+.bg-\[\#050505\]\/80 { background-color: color-mix(in srgb, var(--bg-primary) 80%, transparent) !important; }
+.bg-\[\#0a0a0c\]\/50 { background-color: color-mix(in srgb, var(--bg-secondary) 50%, transparent) !important; }
+.bg-\[\#0a0a0c\]\/80 { background-color: color-mix(in srgb, var(--bg-secondary) 80%, transparent) !important; }
+.bg-\[\#0a0a0c\]\/90 { background-color: color-mix(in srgb, var(--bg-secondary) 90%, transparent) !important; }
+.bg-\[\#121214\]\/50 { background-color: color-mix(in srgb, var(--bg-tertiary) 50%, transparent) !important; }
+
+.text-slate-200 { color: var(--text-primary) !important; }
+.text-slate-300 { color: var(--text-secondary) !important; }
+.text-slate-400 { color: var(--text-tertiary) !important; }
+.text-slate-500 { color: var(--text-quaternary) !important; }
+.text-slate-600 { color: var(--text-quaternary) !important; }
+
+.border-slate-800 { border-color: var(--border-primary) !important; }
+.border-slate-700 { border-color: var(--border-secondary) !important; }
+.border-slate-600 { border-color: var(--border-secondary) !important; }
+
+.border-slate-800\/50 { border-color: color-mix(in srgb, var(--border-primary) 50%, transparent) !important; }
+.border-slate-800\/60 { border-color: color-mix(in srgb, var(--border-primary) 60%, transparent) !important; }
+.border-slate-800\/80 { border-color: color-mix(in srgb, var(--border-primary) 80%, transparent) !important; }
+.border-slate-700\/50 { border-color: color-mix(in srgb, var(--border-secondary) 50%, transparent) !important; }
+
+.hover\:bg-\[\#1a1a1e\]:hover { background-color: var(--bg-quaternary) !important; }
+.hover\:bg-\[\#1e1e24\]:hover { background-color: var(--bg-quaternary) !important; }
+.hover\:text-slate-300:hover { color: var(--text-secondary) !important; }
+.hover\:border-slate-700:hover { border-color: var(--border-secondary) !important; }
+.group:hover .group-hover\:border-slate-700 { border-color: var(--border-secondary) !important; }
+.group:hover .group-hover\:text-white { color: var(--text-primary) !important; }
+.group\/related:hover .group-hover\/related\:text-white { color: var(--text-primary) !important; }
+.hover\:text-white:hover { color: var(--text-primary) !important; }
+
+.hover\:bg-white\/5:hover { background-color: color-mix(in srgb, var(--text-primary) 5%, transparent) !important; }
+.hover\:bg-white\/10:hover { background-color: color-mix(in srgb, var(--text-primary) 10%, transparent) !important; }
+.bg-white\/\[0\.03\] { background-color: color-mix(in srgb, var(--text-primary) 3%, transparent) !important; }
+.hover\:bg-white\/\[0\.06\]:hover { background-color: color-mix(in srgb, var(--text-primary) 6%, transparent) !important; }
+.bg-black\/20 { background-color: color-mix(in srgb, var(--text-primary) 5%, transparent) !important; }
+.bg-black\/40 { background-color: color-mix(in srgb, var(--text-primary) 10%, transparent) !important; }
+.border-white\/\[0\.08\] { border-color: color-mix(in srgb, var(--text-primary) 8%, transparent) !important; }
+.border-white\/5 { border-color: color-mix(in srgb, var(--text-primary) 5%, transparent) !important; }
+.border-white\/10 { border-color: color-mix(in srgb, var(--text-primary) 10%, transparent) !important; }
+
+.bg-slate-800 { background-color: var(--border-primary) !important; }
+.bg-slate-800\/80 { background-color: color-mix(in srgb, var(--border-primary) 80%, transparent) !important; }
+
+.from-white\/5 { --tw-gradient-from: color-mix(in srgb, var(--text-primary) 5%, transparent) var(--tw-gradient-from-position) !important; }
+
+.bg-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, color-mix(in srgb, var(--text-primary) 3%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--text-primary) 3%, transparent) 1px, transparent 1px);
+}
+
+.glass-panel {
+  background: color-mix(in srgb, var(--bg-secondary) 60%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom scrollbar for a more terminal-like feel */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
